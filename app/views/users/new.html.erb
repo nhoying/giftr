@@ -1,2 +1,20 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Register</h1>
+<hr />
+<%= form_for @user do |f| %>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell medium-12">
+                <%= f.label :username %>
+                <%= f.text_field :username, placeholder: 'Username' %>
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+            <div class="cell medium-6">
+                <%= f.label :password_digest %>
+                <%= f.text_field :password_digest %>
+            </div>
+        </div>
+    </div>
+
+
+<%end%>

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_secure_password
+    
     def self.from_omniauth(auth)
         where(email: auth.info.email).first_or_initialize do |user|
             user.name = auth.info.name

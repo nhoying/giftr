@@ -64,6 +64,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
@@ -133,6 +134,8 @@ GEM
     omniauth (1.9.1)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
+    omniauth-facebook (6.0.0)
+      omniauth-oauth2 (~> 1.2)
     omniauth-google-oauth2 (0.8.0)
       jwt (>= 2.0)
       omniauth (>= 1.1.1)
@@ -248,6 +251,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -255,6 +259,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  omniauth-facebook
   omniauth-google-oauth2
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
