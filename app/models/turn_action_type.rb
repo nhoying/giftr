@@ -1,0 +1,2 @@
+class TurnActionType < ApplicationRecord
+end
