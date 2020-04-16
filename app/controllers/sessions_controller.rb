@@ -18,6 +18,11 @@ class SessionsController < ApplicationController
   def welcome
   end
 
+  def destroy
+    reset_session
+    redirect_to welcome_path
+  end
+
   def googleAuth
     # Get Access tokens from the google server
     access_token = request.env["omniauth.auth"]

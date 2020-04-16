@@ -1,30 +1,51 @@
-<ul class="vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown"> 
-    <li>
-        <a href="#">Giftr</a>
-        <ul class="vertical menu">
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown"> 
             <li>
-                <a href="#">Home</a>
+                <a href="#">Giftr</a>
+                <ul class="vertical menu">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">My Exchanges</a>
+                    </li>
+                </ul>
             </li>
-            <li>
-                <a href="#">My Exchanges</a>
-            </li>
+            <% if pinned_to_exchange? %>
+                <li>
+                    <a href="#"><%= current_exchange.name %></a>
+                    <ul class="vertical menu">
+                        <li>
+                            <a href="#">Go to Game</a>
+                        </li>
+                        <li>
+                            <a href="#">Settings</a>
+                        </li>
+                        <li>
+                            <a href="#">Players</a>
+                        </li>
+                    </ul>
+                </li>
+            <% end %>
+            
         </ul>
-    </li>
-    <% if pinned_to_exchange? %>
-        <li>
-            <a href="#"><%= current_exchange.name %></a>
-            <ul class="vertical menu">
+    </div>
+    <div class="top-bar-right">
+        
+        <% if logged_in? %>
+            <ul class="dropdown menu" data-dropdown-menu > 
                 <li>
-                    <a href="#">Go to Game</a>
-                </li>
-                <li>
-                    <a href="#">Settings</a>
-                </li>
-                <li>
-                    <a href="#">Players</a>
+                    <%= link_to "Logout", '/logout', method: :delete %>
                 </li>
             </ul>
-        </li>
-    <% end %>
-    
-</ul>
+        <% else %>
+            <ul class="menu">
+                <li>
+                    <%= link_to "Log In", '/login', class:"button expanded"%>
+                </li>
+            </ul>
+        <% end %>
+        
+    </div>
+</div>

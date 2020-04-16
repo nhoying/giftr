@@ -12,6 +12,15 @@
     <div class="grid-x grid-padding-x">
         <div class="cell small-12">
             <%= submit_tag "Log In", class:"button expanded"%>
+            <hr>
         </div>
+    </div>
+    <div class="grid-x grid-padding-x align-middle">
+        <div class="cell small-6">
+            <%= link_to image_tag(image_path('btn_google_signin_dark_normal_web.png')), '/auth/google_oauth2', method: :get, class: 'google-login' %>
+        </div>
+        <div class="cell small-6">
+            <%= link_to image_tag(image_path('btn_google_signin_dark_normal_web.png')), '/auth/google_oauth2', method: :get, class: 'google-login' %>
+        <div>
     </div>
 <% end %>
