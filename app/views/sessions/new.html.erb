@@ -1,2 +1,17 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<%= form_tag '/login' do %>
+    <div class="grid-x grid-padding-x">
+        <div class="cell small-6">
+            <%= label_tag :username %>
+            <%= text_field_tag :username, params[:username] %>
+        </div>
+        <div class="cell small-6">
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+        </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+        <div class="cell small-12">
+            <%= submit_tag "Log In", class:"button expanded"%>
+        </div>
+    </div>
+<% end %>

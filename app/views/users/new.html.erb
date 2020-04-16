@@ -1,20 +1,48 @@
-<h1>Register</h1>
-<hr />
+
 <%= form_for @user do |f| %>
-    <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-            <div class="cell medium-12">
-                <%= f.label :username %>
-                <%= f.text_field :username, placeholder: 'Username' %>
-            </div>
-        </div>
-        <div class="grid-x grid-padding-x">
-            <div class="cell medium-6">
-                <%= f.label :password_digest %>
-                <%= f.text_field :password_digest %>
-            </div>
+    <div class="grid-x grid-padding-x">
+        <div class="cell">
+            <h1>Register</h1>
+            <hr />
         </div>
     </div>
-
-
+    <% if @user.errors.any? %>
+        <div class="grid-x grid-padding-x">
+            <div class="cell">
+                <h3>Can't register new user</h3>
+                    <ul>
+                        <% @user.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                        <% end %>
+                    </ul>
+            </div>
+        </div>
+    <% end %>
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-12">
+            <%= f.label :username, "Email Address" %>
+            <%= f.text_field :username, placeholder: 'you@domain.com' %>
+        </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-6">
+            <%= f.label :password, "Password" %>
+            <%= f.password_field :password %>
+        </div>
+        <div class="cell medium-6">
+            <%= f.label :password_confirmation, "Confirm Password" %>
+            <%= f.password_field :password_confirmation %>
+        </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-12">
+            <%= f.label :name, "Full Name (optional)" %>
+            <%= f.text_field :name, placeholder: "Jane Smith" %>
+        </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-12">
+            <%= f.submit class: 'button expanded' %>
+        </div>
+    </div>
 <%end%>

@@ -1,0 +1,30 @@
+<ul class="vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown"> 
+    <li>
+        <a href="#">Giftr</a>
+        <ul class="vertical menu">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">My Exchanges</a>
+            </li>
+        </ul>
+    </li>
+    <% if pinned_to_exchange? %>
+        <li>
+            <a href="#"><%= current_exchange.name %></a>
+            <ul class="vertical menu">
+                <li>
+                    <a href="#">Go to Game</a>
+                </li>
+                <li>
+                    <a href="#">Settings</a>
+                </li>
+                <li>
+                    <a href="#">Players</a>
+                </li>
+            </ul>
+        </li>
+    <% end %>
+    
+</ul>

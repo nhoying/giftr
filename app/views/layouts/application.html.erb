@@ -12,8 +12,9 @@
   </head>
 
   <body>
-
-    <%= yield %>
-
+    <div class="grid-container">
+      <%= render "shared/menu" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

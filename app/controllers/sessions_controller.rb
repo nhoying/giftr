@@ -3,6 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
+    user = User.find_by_username(params[:username])
+    if user && user.authenticate(params[:password])
+      log_in(user)
+      redirect_to welcome_path
+    else 
+      flash.now.alert = "Email or password is invalid"
+    end
   end
 
   def login
@@ -26,9 +33,5 @@ class SessionsController < ApplicationController
     log_in(user)
     redirect_to welcome_path
   end
-
-  def log_in(user)
-    session[:user_id] = user.id
-  end
-
+  
 end

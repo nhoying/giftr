@@ -4,8 +4,8 @@
     <h1>You are Logged In, <%= current_user.username %></h1>
 <%end%>
 
-<%= button_to "Login", '/login', method: :get, class: 'button'%>
+<%= link_to "Login", '/login', method: :get, class: 'button'%>
 
-<%= button_to "Register", new_user_path, class: 'button'%>
+<%= link_to "Register", '/users/new', method: :get, class: 'button'%>
 
 <%= button_to "Google Login", '/auth/google_oauth2', method: :get, class: 'button'%>
